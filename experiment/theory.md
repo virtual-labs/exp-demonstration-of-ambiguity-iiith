@@ -1,4 +1,3 @@
-### Link your theory in here
 # Ambiguity in CFG’s
 
 

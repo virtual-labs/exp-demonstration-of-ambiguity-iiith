@@ -2,37 +2,54 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is a parse tree in the context of context-free grammars?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "A tree structure representing the syntactic structure of a string",
+        "b": "A tree used in searching algorithms",
+        "c": "A tree representing the hierarchy of file directories",
+        "d": "A tree data structure for sorting elements"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "In the context of CFGs, what does a production rule represent?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "A terminal symbol in the language",
+        "b": "A non-terminal symbol in the language",
+        "c": "A mapping from a set of symbols to another set of symbols",
+        "d": "A rule for lexical analysis in compilers"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
       "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is ambiguity in the context of context-free grammars?",
+      "answers": {
+        "a": "The ability of a grammar to represent multiple languages",
+        "b": "The presence of more than one parse tree for a given string",
+        "c": "The complexity of a grammar's production rules",
+        "d": "The flexibility of a grammar to adapt to different contexts"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
       "difficulty": "beginner"
     }
   ]

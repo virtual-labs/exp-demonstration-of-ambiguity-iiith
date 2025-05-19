@@ -1,13 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<title>Ambiguity in CFG</title>
+</head>
+
+<body class="body-padding">
+	<div class="container">
+		<div class="columns is-centered">
+			<div id="instruction-container" class="column">
+				<div
+					class="v-collapsible-instruction-container v-instruction-container instruction-container-background">
+					<div id="instruction-title" class="v-collapsible is-size-5">Instructions</div>
+					<div class="v-content" style="text-align: left; padding-left: 10%; padding-right: 10%;">
+						<ul style="list-style: disc;">
+							<li><strong>Change Grammar</strong> button switches between different ambiguous CFG examples
+							</li>
+							<li><strong>Change Input</strong> changes the input string that demonstrates ambiguity</li>
+							<li><strong>Next Step</strong> shows the next possible step in the derivation</li>
+							<li><strong>Previous Step</strong> shows the previous step in the derivation</li>
+							<li>Scroll down to see parse tree for the corresponding derivation</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		</br></br></br></br>
+
+	<div class="columns is-centered is-flex-direction-row is-flex-wrap-wrap is-align-content-start">
+		<div id="control-container" class="column is-3-desktop is-12-tablet is-12-mobile" style="align-self: center;">
+			<div class="v-datalist-container" style="height:400px;">
+				<div class="v-datalist-title">CFG Controls</div>
+				<div class="v-datalist-row" id="toolbar"
+					style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+					<button id="change_grammar" type="button" name="button" class="v-button">
+						Change Grammar
+					</button>
+					<button id="next" type="button" name="button" class="v-button">
+						Next Step
+					</button>
+					<button id="prev" type="button" name="button" class="v-button">
+						Previous Step
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="column is-6-desktop is-12-tablet is-12-mobile">
+			<div class="v-datalist-container" style="height:450px;" id="working-board">
+				<div id="working-area">
+					<div id="grammar_description_container"
+						class="is-size-4 is-centered is-flex-direction-row is-align-content-center">
+					</div>
+					<div id="input_container"
+						class="is-size-1 is-centered is-flex-direction-row is-align-content-center">
+					</div>
+					<div id="production_rules_container"
+						class="is-centered is-flex-direction-row is-align-content-center"
+						style="display: flex; justify-content:center; align-items: center;">
+					</div>
+					<div id="derivation_type_container"
+						class="is-size-5 is-centered is-flex-direction-row is-align-content-center">
+					</div>
+					<div class="tree-container"
+						style="display: flex; justify-content: center; align-items: center; width: 100%;">
+						<svg id="derivation_tree" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300"
+							preserveAspectRatio="xMidYMid meet">
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="trace-container" class="column is-3-desktop is-12-tablet is-12-mobile" style="align-self: center;">
+			<div class="v-datalist-container" style="height:400px;" id="derivation_steps_container">
+				<div class="v-datalist-title">Derivation Steps</div>
+				<ul id="derivation_steps_list" style="height:400px; overflow-y: auto;">
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="./js/helper.js"></script>
+	<script src="./js/data.js"></script>
+	<script src="./js/main.js"></script>
 </body>
+
 </html>

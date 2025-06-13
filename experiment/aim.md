@@ -1,4 +1,3 @@
-### Aim of the experiment
 
 To demonstrate and understand ambiguity in Context-Free Grammars (CFGs) by:
 

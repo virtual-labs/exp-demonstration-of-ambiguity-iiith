@@ -1,4 +1,4 @@
-# Procedure
+
 
 This experiment demonstrates ambiguity in Context-Free Grammars through an interactive simulation. Follow these steps to explore different ambiguous grammars and their multiple derivations:
 

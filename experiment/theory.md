@@ -10,11 +10,11 @@ Left-most derivation of a string is dine by replacing the left-most **non-termin
 
 The right-most derivation of a string is dine by replacing the right-most **non-terminal** symbol according to the corresponding production rule
 
-## Ambiguity in Context Free Grammar
+### Ambiguity in Context Free Grammar
 
 A context free grammar G is called an ambiguous grammar if it has more than one derivation tree for a given string **w ∈ L(G).** There are no algorithms to check whether a given grammar is ambiguous or not. We can check if the given grammar is ambiguous or not by constructing parse trees for a given input string and check the number of parse trees that can be obtained for the given input. It should be noted that there can be a few strings produced by an unambiguous grammar that can have only one parsed tree.
 
-### Examples
+#### Examples
 
 1. Consider the following grammar and construct the parse tree for the string $aab$
 
@@ -41,7 +41,7 @@ $$
 
 Hence, the grammar is ambiguous.
 
-## Questions and Answers
+### Questions and Answers
 
 1. What is left-most derivation in a context-free grammar?
     
@@ -63,7 +63,7 @@ Hence, the grammar is ambiguous.
     
     A: Left factoring combines common prefixes in the production rules, which can further eliminate ambiguity.
 
-## Practical Applications
+### Practical Applications
 
 A few practical examples highlighting the importance of resolving ambiguities in CFGs - 
 

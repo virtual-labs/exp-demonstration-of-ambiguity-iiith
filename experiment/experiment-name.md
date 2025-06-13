@@ -1,3 +1,2 @@
-# Demonstration of Ambiguity in Context-Free Grammars
+## Demonstration of Ambiguity in Context-Free Grammars
 
-## Experiment name

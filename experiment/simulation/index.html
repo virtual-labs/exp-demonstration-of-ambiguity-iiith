@@ -1,96 +1,174 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css">
-	<link rel="stylesheet" href="./css/main.css">
-	<title>Ambiguity in CFG</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ambiguity in CFG</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/interactive.css">
+  <script src="mobile-detection.js"></script>
 </head>
+<body>
+  <div class="container">
+    <!-- Quick Guide Section -->
+    <div class="guide-container">
+      <div class="guide-header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 8v4M12 16h.01"></path>
+        </svg>
+        <h2>Quick Guide</h2>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-number purple">1</div>
+          <div class="step-text">Select an ambiguous CFG</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-number blue">2</div>
+          <div class="step-text">Alternate between left/right derivation steps</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-number green">3</div>
+          <div class="step-text">Step through the derivation</div>
+        </div>
+        <div class="guide-step">
+          <div class="step-number red">4</div>
+          <div class="step-text">Compare parse trees to see ambiguity</div>
+        </div>
+      </div>
+    </div>
 
-<body class="body-padding">
-	<div class="container">
-		<div class="columns is-centered">
-			<div id="instruction-container" class="column">
-				<div
-					class="v-collapsible-instruction-container v-instruction-container instruction-container-background">
-					<div id="instruction-title" class="v-collapsible is-size-5">Instructions</div>
-					<div class="v-content" style="text-align: left; padding-left: 10%; padding-right: 10%;">
-						<ul style="list-style: disc;">
-							<li><strong>Change Grammar</strong> button switches between different ambiguous CFG examples
-							</li>
-							<li><strong>Change Input</strong> changes the input string that demonstrates ambiguity</li>
-							<li><strong>Next Step</strong> shows the next possible step in the derivation</li>
-							<li><strong>Previous Step</strong> shows the previous step in the derivation</li>
-							<li>Scroll down to see parse tree for the corresponding derivation</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-		</br></br></br></br>
+    <!-- Main Content Panels -->
+    <div class="main-panels">
+      <!-- Left Derivation Steps Panel -->
+      <div class="panel steps-panel steps-panel-left">
+        <h3 class="panel-title">Derivation A</h3>
+        <div class="current-derivation-indicator">
+          <div id="current_derivation_info_left" class="current-derivation">
+            Derivation Steps A
+          </div>
+        </div>
+        <div class="trace-container">
+          <ul id="derivation_steps_list_left">
+            <!-- Will be populated by JavaScript -->
+          </ul>
+        </div>
+      </div>
 
-	<div class="columns is-centered is-flex-direction-row is-flex-wrap-wrap is-align-content-start">
-		<div id="control-container" class="column is-3-desktop is-12-tablet is-12-mobile" style="align-self: center;">
-			<div class="v-datalist-container" style="height:400px;">
-				<div class="v-datalist-title">CFG Controls</div>
-				<div class="v-datalist-row" id="toolbar"
-					style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-					<button id="change_grammar" type="button" name="button" class="v-button">
-						Change Grammar
-					</button>
-					<button id="next" type="button" name="button" class="v-button">
-						Next Step
-					</button>
-					<button id="prev" type="button" name="button" class="v-button">
-						Previous Step
-					</button>
-				</div>
-			</div>
-		</div>
+      <!-- Main Experiment Area -->
+      <div class="panel experiment-panel">
+        <!-- Controls (horizontal at the top) -->
+        <div class="controls-container">
+          <div class="controls-title">Controls:</div>
+          <div class="horizontal-controls">
+            <button id="change_grammar" class="button purple">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"></path>
+              </svg>
+              Change Grammar
+            </button>
+            <button id="toggle_derivation" class="button purple" style="display: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+              Toggle Derivation
+            </button>
+            <button id="prev_step" class="button green">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              Previous Step
+            </button>
+            <button id="show_hint" class="button blue">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 8v4M12 16h.01"></path>
+              </svg>
+              Show Hint
+            </button>
+            <button id="next_step" class="button red">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+              Auto Step
+            </button>
+            <!-- "Compare Derivations" button removed as comparison now shows automatically after final step -->
+          </div>
+        </div>
 
-		<div class="column is-6-desktop is-12-tablet is-12-mobile">
-			<div class="v-datalist-container" style="height:450px;" id="working-board">
-				<div id="working-area">
-					<div id="grammar_description_container"
-						class="is-size-4 is-centered is-flex-direction-row is-align-content-center">
-					</div>
-					<div id="input_container"
-						class="is-size-1 is-centered is-flex-direction-row is-align-content-center">
-					</div>
-					<div id="production_rules_container"
-						class="is-centered is-flex-direction-row is-align-content-center"
-						style="display: flex; justify-content:center; align-items: center;">
-					</div>
-					<div id="derivation_type_container"
-						class="is-size-5 is-centered is-flex-direction-row is-align-content-center">
-					</div>
-					<div class="tree-container"
-						style="display: flex; justify-content: center; align-items: center; width: 100%;">
-						<svg id="derivation_tree" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300"
-							preserveAspectRatio="xMidYMid meet">
-						</svg>
-					</div>
-				</div>
-			</div>
-		</div>
+        <!-- Input String (Shared) -->
+        <div class="shared-input-container">
+          <div class="input-string-label">Input String:</div>
+          <div id="input_container_shared">
+            <div class="input-string">id + id * id</div>
+          </div>
+        </div>
 
-		<div id="trace-container" class="column is-3-desktop is-12-tablet is-12-mobile" style="align-self: center;">
-			<div class="v-datalist-container" style="height:400px;" id="derivation_steps_container">
-				<div class="v-datalist-title">Derivation Steps</div>
-				<ul id="derivation_steps_list" style="height:400px; overflow-y: auto;">
-				</ul>
-			</div>
-		</div>
-	</div>
+        <!-- Production Rules Section -->
+        <div class="production-rules-section">
+          <h4 class="section-title">Production Rules (Click to Apply):</h4>
+          <div id="production_rules_container" class="production-rules">
+            <div class="rule">E → E + E</div>
+            <div class="rule">E → E * E</div>
+            <div class="rule">E → (E)</div>
+            <div class="rule">E → id</div>
+          </div>
+        </div>
 
-	<script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="./js/helper.js"></script>
-	<script src="./js/data.js"></script>
-	<script src="./js/main.js"></script>
+        <!-- Parallel Derivations Container -->
+        <div class="parallel-derivations-container">
+          <!-- Left Derivation -->
+          <div class="derivation-column">
+            <div class="derivation-type-container">
+              <div id="derivation_type_left" class="derivation-type">Leftmost Derivation</div>
+            </div>
+            
+            <div class="parse-tree-container">
+              <svg id="parse_tree_left" width="100%" height="634" viewBox="0 0 818 660" preserveAspectRatio="xMidYMid meet">
+                <!-- SVG will be populated by JavaScript - showing the left parse tree -->
+              </svg>
+            </div>
+          </div>
+
+          <!-- Right Derivation -->
+          <div class="derivation-column">
+            <div class="derivation-type-container">
+              <div id="derivation_type_right" class="derivation-type">Rightmost Derivation</div>
+            </div>
+            
+            <div class="parse-tree-container">
+              <svg id="parse_tree_right" width="100%" height="634" viewBox="0 0 818 660" preserveAspectRatio="xMidYMid meet">
+                <!-- SVG will be populated by JavaScript - showing the right parse tree -->
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Derivation Steps Panel -->
+      <div class="panel steps-panel steps-panel-right">
+        <h3 class="panel-title">Derivation B</h3>
+        <div class="current-derivation-indicator">
+          <div id="current_derivation_info_right" class="current-derivation">
+            Derivation Steps B
+          </div>
+        </div>
+        <div class="trace-container">
+          <ul id="derivation_steps_list_right">
+            <!-- Will be populated by JavaScript -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data_all.js"></script>
+  <script src="js/script_new.js"></script>
+  <script src="js/interactive.js"></script>
 </body>
-
 </html>

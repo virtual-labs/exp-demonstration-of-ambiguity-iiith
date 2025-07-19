@@ -1,0 +1,215 @@
+/* Interactive Mode Styles */
+.interactive-controls {
+  background: white;
+  border-radius: 8px;
+  margin: 8px 0;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.current-step-info {
+  background: #f5f7fa;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.current-string {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.direction-text {
+  color: #3B82F6;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.instruction-text {
+  color: #1e293b;
+  font-size: 0.85rem;
+}
+
+.rule-selection-container {
+  margin-bottom: 8px;
+}
+
+.rule-selection-container .instruction-text {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.rule-buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.rule-button {
+  background: #6366F1;
+  color: #fff;
+  border: none;
+  box-shadow: 0 0.125rem 0.5rem rgba(59, 130, 246, 0.06);
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  padding: 0.75rem 1.5rem;
+  min-width: 110px;
+  min-height: 2.5rem;
+  border-radius: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.01em;
+  margin-bottom: 5px;
+}
+
+.rule-button:hover {
+  filter: brightness(0.95);
+  box-shadow: 0 0.25rem 1rem rgba(59, 130, 246, 0.10);
+  transform: scale(1.05);
+}
+
+.rule-button:active {
+  filter: brightness(0.90);
+  transform: scale(0.95);
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+}
+
+.interactive-toggle {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.interactive-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.interactive-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.interactive-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .interactive-toggle-slider {
+  background-color: #7c3aed;
+}
+
+input:focus + .interactive-toggle-slider {
+  box-shadow: 0 0 1px #7c3aed;
+}
+
+input:checked + .interactive-toggle-slider:before {
+  transform: translateX(18px);
+}
+
+.interactive-mode-text {
+  font-size: 0.9rem;
+  color: #4b5563;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+/* Production Rule Button Styles - Keep original horizontal layout and appearance */
+.production-rule-button {
+  /* Inherit original rule styles */
+  padding: 8px 12px;
+  background: rgba(140, 90, 255, 0.18);
+  border: none;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: #5b21b6;
+  font-weight: 500;
+  
+  /* Add interactive functionality */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px 0 rgba(124, 58, 237, 0.04);
+  
+  /* Ensure it stays in horizontal layout */
+  display: inline-block;
+  margin: 0;
+}
+
+.production-rule-button:hover {
+  background: rgba(140, 90, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.production-rule-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.production-rule-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Shake animation for incorrect selections */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Current derivation highlighting */
+.current-derivation.left {
+  border-left: 4px solid #10b981;
+  padding-left: 8px;
+}
+
+.current-derivation.right {
+  border-left: 4px solid #f59e0b;
+  padding-left: 8px;
+}
+
+/* Interactive Helper Buttons */
+.interactive-helpers {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.interactive-helpers .button {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  min-width: auto;
+}

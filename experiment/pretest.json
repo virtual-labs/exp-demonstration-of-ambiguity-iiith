@@ -2,55 +2,157 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "What is a parse tree in the context of context-free grammars?",
+      "question": "What is ambiguity in context-free grammars?",
       "answers": {
-        "a": "A tree structure representing the syntactic structure of a string",
-        "b": "A tree used in searching algorithms",
-        "c": "A tree representing the hierarchy of file directories",
-        "d": "A tree data structure for sorting elements"
+        "a": "Having multiple production rules for the same non-terminal",
+        "b": "Having more than one parse tree for the same string",
+        "c": "Having both terminal and non-terminal symbols",
+        "d": "Having recursive production rules"
       },
       "explanations": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "In the context of CFGs, what does a production rule represent?",
-      "answers": {
-        "a": "A terminal symbol in the language",
-        "b": "A non-terminal symbol in the language",
-        "c": "A mapping from a set of symbols to another set of symbols",
-        "d": "A rule for lexical analysis in compilers"
-      },
-      "explanations": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "What is ambiguity in the context of context-free grammars?",
-      "answers": {
-        "a": "The ability of a grammar to represent multiple languages",
-        "b": "The presence of more than one parse tree for a given string",
-        "c": "The complexity of a grammar's production rules",
-        "d": "The flexibility of a grammar to adapt to different contexts"
-      },
-      "explanations": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Incorrect. Multiple production rules for the same non-terminal are normal and don't necessarily cause ambiguity.",
+        "b": "Correct. A context-free grammar is ambiguous if there exists at least one string that can be parsed in multiple ways, resulting in different parse trees for the same input string.",
+        "c": "Incorrect. All context-free grammars have both terminal and non-terminal symbols.",
+        "d": "Incorrect. Recursive rules are common in CFGs and don't inherently cause ambiguity."
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
+    },
+    {
+      "question": "In the expression 'id + id * id', what makes the grammar E → E + E | E * E | id ambiguous?",
+      "answers": {
+        "a": "The expression contains multiple operators",
+        "b": "The grammar doesn't specify operator precedence",
+        "c": "The expression has too many identifiers",
+        "d": "The grammar is missing parentheses rules"
+      },
+      "explanations": {
+        "a": "Incorrect. Having multiple operators doesn't inherently cause ambiguity.",
+        "b": "Correct. Without explicit precedence rules, the expression can be parsed as either '(id + id) * id' or 'id + (id * id)', leading to two different parse trees.",
+        "c": "Incorrect. The number of identifiers doesn't affect ambiguity.",
+        "d": "Incorrect. While adding parentheses rules can help resolve ambiguity, their absence isn't what makes this grammar ambiguous."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is a parse tree?",
+      "answers": {
+        "a": "A sequence of production rule applications",
+        "b": "A tree structure showing how a string is derived from the start symbol",
+        "c": "A list of terminal symbols in a string",
+        "d": "A representation of the grammar's production rules"
+      },
+      "explanations": {
+        "a": "Incorrect. A sequence of production rule applications is called a derivation, not a parse tree.",
+        "b": "Correct. A parse tree is a hierarchical tree structure that shows how a string can be derived from the grammar's start symbol, with the start symbol at the root and terminal symbols at the leaves.",
+        "c": "Incorrect. A list of terminal symbols is just the input string, not a parse tree.",
+        "d": "Incorrect. The grammar's production rules are represented separately, not as a parse tree."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "For the grammar S → SS | ab | ba, why is the string 'abab' ambiguous?",
+      "answers": {
+        "a": "Because it contains both 'ab' and 'ba' patterns",
+        "b": "Because it can be grouped as (ab)(ab) or as a(ba)b",
+        "c": "Because it can be grouped as (ab)(ab) or as (abab)",
+        "d": "Because it violates the grammar rules"
+      },
+      "explanations": {
+        "a": "Incorrect. The string 'abab' doesn't contain the 'ba' pattern.",
+        "b": "Incorrect. The grouping 'a(ba)b' doesn't correspond to valid applications of the given production rules.",
+        "c": "Correct. The string 'abab' can be derived in two ways: S → SS → (ab)(ab) where each S becomes 'ab', or through a different grouping structure, demonstrating ambiguity in how the string is parsed.",
+        "d": "Incorrect. The string 'abab' can be validly generated by the grammar."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What is the 'dangling else' problem in programming languages?",
+      "answers": {
+        "a": "When an else statement has no corresponding then statement",
+        "b": "When it's unclear which if statement an else clause belongs to",
+        "c": "When else statements are written incorrectly",
+        "d": "When there are too many nested if statements"
+      },
+      "explanations": {
+        "a": "Incorrect. In the dangling else problem, there is always a corresponding if-then statement.",
+        "b": "Correct. The dangling else problem occurs in nested if-then-else constructs where it's ambiguous which if statement an else clause should be associated with, leading to multiple possible parse trees.",
+        "c": "Incorrect. This is about grammatical ambiguity, not syntax errors.",
+        "d": "Incorrect. The number of nested statements doesn't define the dangling else problem."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In a side-by-side derivation comparison, what are you observing?",
+      "answers": {
+        "a": "Two different strings being derived",
+        "b": "Two different grammars generating strings",
+        "c": "Two different parse trees for the same string",
+        "d": "Two different types of derivations (leftmost vs rightmost)"
+      },
+      "explanations": {
+        "a": "Incorrect. In ambiguity demonstration, both derivations generate the same string.",
+        "b": "Incorrect. Both derivations use the same grammar.",
+        "c": "Correct. The side-by-side comparison shows two different parse trees that both generate the same input string, demonstrating the grammar's ambiguity.",
+        "d": "Incorrect. While the derivations may be leftmost and rightmost, the key observation is that they produce different parse tree structures."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In the arithmetic expression E → E + E | E * E | (E) | id, if 'id + id * id' is parsed as E[E[id] + E[E[id] * E[id]]], what does this represent?",
+      "answers": {
+        "a": "Multiplication has higher precedence than addition",
+        "b": "Addition has higher precedence than multiplication",
+        "c": "Both operators have equal precedence",
+        "d": "The expression is invalid"
+      },
+      "explanations": {
+        "a": "Correct. This parse tree structure shows that the multiplication (id * id) is grouped together first, and then added to the first id, which means multiplication has higher precedence than addition (id + (id * id)).",
+        "b": "Incorrect. If addition had higher precedence, the structure would group (id + id) first.",
+        "c": "Incorrect. Equal precedence would require additional rules to resolve the ambiguity.",
+        "d": "Incorrect. The expression can be validly parsed, though ambiguously."
+      },
+      "correctAnswer": "a",
+      "difficulty": "hard"
+    },
+    {
+      "question": "For the if-then-else grammar with the string 'if E then if E then other else other', what causes the ambiguity?",
+      "answers": {
+        "a": "The presence of two if statements",
+        "b": "The single else clause can associate with either if statement",
+        "c": "The else clause appears at the end",
+        "d": "The grammar doesn't allow nested if statements"
+      },
+      "explanations": {
+        "a": "Incorrect. Having multiple if statements doesn't inherently cause ambiguity.",
+        "b": "Correct. The ambiguity arises because the single 'else other' clause can be associated with either the outer 'if E then' or the inner 'if E then', leading to two different parse trees with different semantic meanings.",
+        "c": "Incorrect. The position of the else clause is not the source of ambiguity.",
+        "d": "Incorrect. The grammar does allow nested if statements, which is actually part of what creates the ambiguity."
+      },
+      "correctAnswer": "b",
+      "difficulty": "hard"
+    },
+    {
+      "question": "When stepping through ambiguous derivations, what pattern would you observe in the derivation steps?",
+      "answers": {
+        "a": "Both derivations apply exactly the same rules in the same order",
+        "b": "The derivations apply different rules at certain steps, leading to different tree structures",
+        "c": "One derivation uses more steps than the other",
+        "d": "The derivations generate different final strings"
+      },
+      "explanations": {
+        "a": "Incorrect. If both derivations applied the same rules in the same order, they would produce identical parse trees.",
+        "b": "Correct. In ambiguous grammars, different derivations of the same string will apply production rules in different orders or choose different rules at decision points, resulting in structurally different parse trees.",
+        "c": "Incorrect. The number of steps may or may not differ; the key difference is in the structure, not necessarily the length.",
+        "d": "Incorrect. Both derivations generate the same final string; the difference is in how they structure the derivation."
+      },
+      "correctAnswer": "b",
+      "difficulty": "hard"
     }
   ]
 }

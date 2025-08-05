@@ -1,6 +1,3 @@
-
-# Procedure
-
 ## Getting Started
 
 The simulation interface consists of three main components:

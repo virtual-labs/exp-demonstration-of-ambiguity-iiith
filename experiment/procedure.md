@@ -1,56 +1,67 @@
-## Step 1: Understanding the Interface
 
-The simulation interface consists of three main sections:
-- **CFG Controls**: Contains buttons to navigate through the experiment
-- **Working Area**: Displays the current grammar, input string, derivation steps, and parse tree
-- **Derivation Steps**: Shows the step-by-step derivation process
+# Procedure
 
-## Step 2: Exploring Different Grammars
+## Getting Started
 
-1. **Start with the default grammar**: The simulation begins with an ambiguous arithmetic expression grammar:
-   ```
-   E → E + E | E * E | (E) | id
-   ```
+The simulation interface consists of three main components:
 
-2. **Click "Change Grammar"** to cycle through different ambiguous grammar examples:
-   - **Grammar 1**: Arithmetic expressions with ambiguous operator precedence
-   - **Grammar 2**: String concatenation grammar (S → SS | ab | ba)
-   - **Grammar 3**: Classic if-then-else ambiguity problem
+1. **Control Panel**: Contains buttons to navigate through different ambiguous grammars and derivation steps
+2. **Derivation Panels**: Left and right panels showing two different derivations of the same string
+3. **Parse Tree Visualization**: Side-by-side comparison of parse trees demonstrating ambiguity
 
-## Step 3: Analyzing Derivations
+## Step-by-Step Instructions
 
-1. **Observe the input string** displayed in the working area
-2. **Use "Next Step"** to advance through the leftmost derivation
-3. **Use "Previous Step"** to go back and review previous derivation steps
-4. **Watch the parse tree** update dynamically as you progress through the derivation
+### 1. Selecting an Ambiguous Grammar
 
-## Step 4: Comparing Multiple Derivations
+Click the **"Change Grammar"** button to cycle through three different ambiguous grammar examples. Each grammar demonstrates a specific type of ambiguity commonly found in programming languages.
 
-1. **Complete one derivation** by clicking "Next Step" until you reach the final string
-2. **Change to the alternative derivation** (the simulation automatically switches between different possible derivations for the same string)
-3. **Compare the different parse trees** generated for the same input string
-4. **Note the differences** in the derivation steps and resulting tree structures
+### 2. Understanding the Interface
 
-## Step 5: Understanding Ambiguity
+- **Input String**: Displayed at the center, showing the string being derived by both parse trees
+- **Production Rules**: Listed below the input string, showing all available grammar rules
+- **Derivation A & B**: Left and right panels showing two different derivations of the same string
+- **Parse Trees**: Visual representations updating as you step through derivations
 
-1. **Identify why each grammar is ambiguous** by observing multiple valid derivations
-2. **Analyze the practical implications** of each type of ambiguity:
-   - **Arithmetic expressions**: Different operator precedence interpretations
-   - **String concatenation**: Different grouping possibilities
-   - **If-then-else**: Dangling else problem
+### 3. Stepping Through Derivations
 
-## Step 6: Key Observations
+#### Auto Step Mode
 
-While using the simulation, pay attention to:
-- How the same input string can have multiple leftmost derivations
-- How different derivations lead to different parse tree structures
-- The step-by-step process of applying production rules
-- The visual representation of ambiguity through parse trees
+Click the **"Auto Step"** button to automatically advance through both derivations simultaneously. The simulation alternates between the left and right derivations, showing how the same string can be derived differently.
 
-## Learning Outcomes
+#### Manual Navigation
 
-By completing this procedure, you will:
-- Understand what makes a grammar ambiguous
-- Visualize how ambiguity manifests in parse trees
-- Recognize common patterns of ambiguity in programming languages
-- Appreciate the importance of resolving ambiguity in compiler design
+- **"Previous Step"**: Go back one step in the current derivation
+- **"Show Hint"**: Get guidance about the next step or the difference between derivations
+
+### 4. Observing the Derivation Process
+
+As you step through the derivations:
+
+- **Derivation Steps**: Watch how each panel shows different sequences of rule applications
+- **Parse Tree Growth**: Observe how the trees develop differently for the same input string
+- **Rule Applications**: Notice which production rules are applied at each step
+
+### 5. Comparing Parse Trees
+
+After completing both derivations:
+
+- **Structure Differences**: Compare the final tree structures side-by-side
+- **Semantic Implications**: Understand how different parse trees can lead to different interpretations
+- **Ambiguity Visualization**: See clearly how one string has multiple valid parse trees
+
+### 6. Exploring Different Grammar Types
+
+The simulation includes three types of ambiguous grammars:
+
+- **Arithmetic Expressions**: Demonstrates operator precedence ambiguity
+- **String Concatenation**: Shows grouping ambiguity in sequence operations  
+- **If-Then-Else Statements**: Illustrates the classic dangling else problem
+
+### 7. Understanding Results
+
+A successful exploration involves:
+
+- Completing both derivations for the same input string
+- Observing the structural differences between the resulting parse trees
+- Understanding why the grammar is considered ambiguous
+- Recognizing the practical implications of each type of ambiguity

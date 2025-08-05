@@ -2,55 +2,157 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Which of the following is a consequence of ambiguity in CFGs?",
+      "question": "How can you prove that a context-free grammar is ambiguous?",
       "answers": {
-        "a": "Efficient parsing",
-        "b": "Deterministic parsing",
-        "c": "Ambiguous parse trees",
-        "d": "Unambiguous grammars"
+        "a": "Show that it has recursive production rules",
+        "b": "Show that it generates an infinite language",
+        "c": "Show two different parse trees for the same string",
+        "d": "Show that it has multiple production rules for one non-terminal"
       },
       "explanations": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Incorrect. Recursive production rules are common in CFGs and don't necessarily indicate ambiguity.",
+        "b": "Incorrect. Generating an infinite language is unrelated to ambiguity.",
+        "c": "Correct. The most direct way to prove a grammar is ambiguous is to find at least one string that has two or more distinct parse trees, demonstrating that the same string can be derived in multiple structurally different ways.",
+        "d": "Incorrect. Having multiple production rules for one non-terminal is normal and doesn't indicate ambiguity."
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "What is the key difference between a leftmost derivation and a rightmost derivation in context-free grammars?",
+      "question": "What is the practical significance of ambiguity in programming language grammars?",
       "answers": {
-        "a": "The direction in which non-terminals are expanded",
-        "b": "The number of production rules used",
-        "c": "The presence of epsilon (ε) productions",
-        "d": "The length of the input string"
+        "a": "It makes programs run faster",
+        "b": "It can lead to different interpretations of the same code",
+        "c": "It reduces memory usage",
+        "d": "It simplifies compiler design"
       },
       "explanations": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Incorrect. Ambiguity doesn't improve program execution speed.",
+        "b": "Correct. Ambiguity in programming language grammars can lead to different semantic interpretations of the same source code, potentially causing unexpected program behavior or compilation errors.",
+        "c": "Incorrect. Ambiguity doesn't affect memory usage directly.",
+        "d": "Incorrect. Ambiguity actually complicates compiler design by making parsing more complex."
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "How can ambiguity be resolved in a CFG?",
+      "question": "In the context of ambiguous grammars, what do multiple derivations of the same string demonstrate?",
       "answers": {
-        "a": "By making the grammar more complex",
-        "b": "By introducing more non-terminals",
-        "c": "By adding more production rules",
-        "d": "By rewriting the grammar to make it unambiguous"
+        "a": "The grammar is incorrect",
+        "b": "The string doesn't belong to the language",
+        "c": "Different structural interpretations of the same input",
+        "d": "The need for more production rules"
       },
       "explanations": {
-        "a": "",
-        "b": "",
-        "c": "",
-        "d": ""
+        "a": "Incorrect. The grammar can be syntactically correct but still ambiguous.",
+        "b": "Incorrect. The string belongs to the language since it can be derived.",
+        "c": "Correct. Multiple derivations show that the same input string can have different structural interpretations, which is the essence of grammatical ambiguity.",
+        "d": "Incorrect. Adding more rules might increase rather than resolve ambiguity."
       },
-      "correctAnswer": "d",
+      "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+    {
+      "question": "For the expression 'a + b * c', why might different parse trees lead to different results?",
+      "answers": {
+        "a": "Because the variables have different values",
+        "b": "Because the operations are performed in different orders",
+        "c": "Because the expression syntax is invalid",
+        "d": "Because different compilers are used"
+      },
+      "explanations": {
+        "a": "Incorrect. The variable values don't change the parsing structure.",
+        "b": "Correct. Different parse trees impose different operator precedence, leading to different evaluation orders: '(a + b) * c' versus 'a + (b * c)', which can produce different numerical results.",
+        "c": "Incorrect. The expression syntax is valid; the issue is how it's interpreted.",
+        "d": "Incorrect. This is about grammatical interpretation, not compiler differences."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In the string concatenation grammar S → SS | ab | ba, what does the ambiguity of 'abab' reveal about associativity?",
+      "answers": {
+        "a": "Concatenation is always left-associative",
+        "b": "Concatenation is always right-associative",
+        "c": "The grammar doesn't specify associativity for concatenation",
+        "d": "Associativity is irrelevant for concatenation"
+      },
+      "explanations": {
+        "a": "Incorrect. If it were always left-associative, there would be only one parse tree.",
+        "b": "Incorrect. If it were always right-associative, there would be only one parse tree.",
+        "c": "Correct. The ambiguity demonstrates that the grammar doesn't specify whether concatenation should be left-associative or right-associative, allowing multiple valid parse trees for the same string.",
+        "d": "Incorrect. Associativity is relevant and its absence causes the ambiguity."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What makes the dangling else problem particularly challenging in compiler design?",
+      "answers": {
+        "a": "It requires special hardware support",
+        "b": "It affects program semantics based on parser choice",
+        "c": "It only occurs in functional programming languages",
+        "d": "It makes programs syntactically invalid"
+      },
+      "explanations": {
+        "a": "Incorrect. The dangling else problem is a grammatical issue, not a hardware concern.",
+        "b": "Correct. The dangling else problem is challenging because different parsing decisions lead to different program meanings, affecting which 'if' statement the 'else' clause belongs to and thus changing program behavior.",
+        "c": "Incorrect. This problem occurs in imperative languages with conditional statements.",
+        "d": "Incorrect. The programs are syntactically valid; the issue is semantic ambiguity."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "If a grammar generates the string 'if E then if E then other else other' with two different parse trees, what are the two possible interpretations?",
+      "answers": {
+        "a": "Sequential execution vs. parallel execution",
+        "b": "Compile-time evaluation vs. runtime evaluation",
+        "c": "Else belongs to outer if vs. else belongs to inner if",
+        "d": "Forward execution vs. backward execution"
+      },
+      "explanations": {
+        "a": "Incorrect. Both interpretations involve sequential execution of conditionals.",
+        "b": "Incorrect. This is about parsing structure, not evaluation timing.",
+        "c": "Correct. The two parse trees represent whether the 'else other' clause is associated with the outer 'if E then' statement or the inner 'if E then' statement, leading to different program logic.",
+        "d": "Incorrect. Both interpretations follow normal forward execution flow."
+      },
+      "correctAnswer": "c",
+      "difficulty": "hard"
+    },
+    {
+      "question": "How would you resolve the ambiguity in the arithmetic expression grammar E → E + E | E * E | (E) | id?",
+      "answers": {
+        "a": "Remove the problematic operators",
+        "b": "Introduce precedence through separate non-terminals",
+        "c": "Add more parentheses to all expressions",
+        "d": "Use only left-recursive rules"
+      },
+      "explanations": {
+        "a": "Incorrect. Removing operators would limit the grammar's expressiveness unnecessarily.",
+        "b": "Correct. Introducing separate non-terminals for different precedence levels (like E for addition, T for multiplication, F for factors) would structurally enforce operator precedence and eliminate ambiguity.",
+        "c": "Incorrect. Adding parentheses to expressions doesn't change the grammar's inherent ambiguity.",
+        "d": "Incorrect. The direction of recursion doesn't resolve precedence ambiguity."
+      },
+      "correctAnswer": "b",
+      "difficulty": "hard"
+    },
+    {
+      "question": "When comparing two derivations of the same string in an ambiguous grammar, what fundamental property are you observing?",
+      "answers": {
+        "a": "The grammar's computational complexity",
+        "b": "The string's membership in the language",
+        "c": "The non-deterministic nature of grammatical parsing",
+        "d": "The grammar's generative capacity"
+      },
+      "explanations": {
+        "a": "Incorrect. This is about structural differences, not computational complexity.",
+        "b": "Incorrect. Both derivations confirm the string's membership; the issue is how it's structured.",
+        "c": "Correct. The existence of multiple valid derivations for the same string demonstrates that the parsing process is non-deterministic - there isn't a unique way to parse the input, which is the fundamental characteristic of ambiguous grammars.",
+        "d": "Incorrect. Both derivations use the same grammar, so generative capacity isn't the focus."
+      },
+      "correctAnswer": "c",
+      "difficulty": "hard"
     }
   ]
 }

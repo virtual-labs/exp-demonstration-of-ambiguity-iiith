@@ -1,0 +1,138 @@
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/js/data.js
+  394:7  warning  'cfgs' is assigned a value but never used  no-unused-vars
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/js/data_all.js
+  131:7  warning  'cfgs' is assigned a value but never used  no-unused-vars
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/js/data_combined.js
+  91:7  warning  'cfgs' is assigned a value but never used  no-unused-vars
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/js/data_expression.js
+  53:7  warning  'cfgs' is assigned a value but never used  no-unused-vars
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/js/data_new.js
+  48:7  warning  'cfgs' is assigned a value but never used  no-unused-vars
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/js/hardcoded_expression_tree.js
+   14:10  warning  'newElement' is defined but never used       no-unused-vars
+   49:21  warning  'cfgs' is not defined                        no-undef
+   58:21  warning  'cfgs' is not defined                        no-undef
+   80:21  warning  'cfgs' is not defined                        no-undef
+  156:11  warning  'height' is assigned a value but never used  no-unused-vars
+  164:24  warning  'cfgs' is not defined                        no-undef
+  354:21  warning  'cfgs' is not defined                        no-undef
+  382:5   warning  'swal' is not defined                        no-undef
+  397:5   warning  'swal' is not defined                        no-undef
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/js/hardcoded_tree.js
+   14:10  warning  'newElement' is defined but never used       no-unused-vars
+   49:21  warning  'cfgs' is not defined                        no-undef
+   58:21  warning  'cfgs' is not defined                        no-undef
+   80:21  warning  'cfgs' is not defined                        no-undef
+  156:11  warning  'height' is assigned a value but never used  no-unused-vars
+  164:24  warning  'cfgs' is not defined                        no-undef
+  307:21  warning  'cfgs' is not defined                        no-undef
+  335:5   warning  'swal' is not defined                        no-undef
+  350:5   warning  'swal' is not defined                        no-undef
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/js/interactive.js
+   65:24  warning  'cfgs' is not defined                              no-undef
+   65:29  warning  'currentCfgIndex' is not defined                   no-undef
+   92:24  warning  'cfgs' is not defined                              no-undef
+   92:29  warning  'currentCfgIndex' is not defined                   no-undef
+   93:44  warning  'currentInputIndex' is not defined                 no-undef
+   94:49  warning  'currentDerivationIndex' is not defined            no-undef
+   96:9   warning  'currentStepIndex' is not defined                  no-undef
+   97:46  warning  'currentStepIndex' is not defined                  no-undef
+  109:60  warning  'currentStepIndex' is not defined                  no-undef
+  125:9   warning  'nextStep' is not defined                          no-undef
+  134:28  warning  'cfgs' is not defined                              no-undef
+  134:33  warning  'currentCfgIndex' is not defined                   no-undef
+  135:48  warning  'currentInputIndex' is not defined                 no-undef
+  136:53  warning  'currentDerivationIndex' is not defined            no-undef
+  194:24  warning  'cfgs' is not defined                              no-undef
+  194:29  warning  'currentCfgIndex' is not defined                   no-undef
+  195:44  warning  'currentInputIndex' is not defined                 no-undef
+  196:49  warning  'currentDerivationIndex' is not defined            no-undef
+  198:9   warning  'currentStepIndex' is not defined                  no-undef
+  199:41  warning  'currentStepIndex' is not defined                  no-undef
+  217:24  warning  'cfgs' is not defined                              no-undef
+  217:29  warning  'currentCfgIndex' is not defined                   no-undef
+  218:44  warning  'currentInputIndex' is not defined                 no-undef
+  219:49  warning  'currentDerivationIndex' is not defined            no-undef
+  221:9   warning  'currentStepIndex' is not defined                  no-undef
+  222:46  warning  'currentStepIndex' is not defined                  no-undef
+  223:43  warning  'currentStepIndex' is not defined                  no-undef
+  255:5   warning  'swal' is not defined                              no-undef
+  277:9   warning  'currentStepIndex' is not defined                  no-undef
+  277:28  warning  'cfgs' is not defined                              no-undef
+  277:33  warning  'currentCfgIndex' is not defined                   no-undef
+  277:57  warning  'currentInputIndex' is not defined                 no-undef
+  277:88  warning  'currentDerivationIndex' is not defined            no-undef
+  279:9   warning  'nextStep' is not defined                          no-undef
+  286:39  warning  'startSymbol' is defined but never used            no-unused-vars
+  300:40  warning  'startSymbol' is defined but never used            no-unused-vars
+  314:5   warning  'swal' is not defined                              no-undef
+  329:5   warning  'swal' is not defined                              no-undef
+  341:10  warning  'showInfoMessage' is defined but never used        no-unused-vars
+  342:5   warning  'swal' is not defined                              no-undef
+  354:10  warning  'toggleInteractiveMode' is defined but never used  no-unused-vars
+  357:9   warning  'interactiveModeEnabled' is not defined            no-undef
+  370:9   warning  'swal' is not defined                              no-undef
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/js/script.js
+  261:5  error  Parsing error: Unexpected token )
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/js/script_new.js
+     6:5   warning  'interactiveModeEnabled' is assigned a value but never used  no-unused-vars
+    24:10  warning  'newElement' is defined but never used                       no-unused-vars
+    65:47  warning  'cfgs' is not defined                                        no-undef
+    80:17  warning  'cfgs' is not defined                                        no-undef
+    95:17  warning  'cfgs' is not defined                                        no-undef
+   161:17  warning  'cfgs' is not defined                                        no-undef
+   163:11  warning  'leftDerivation' is assigned a value but never used          no-unused-vars
+   164:11  warning  'rightDerivation' is assigned a value but never used         no-unused-vars
+   207:17  warning  'cfgs' is not defined                                        no-undef
+   409:17  warning  'cfgs' is not defined                                        no-undef
+   413:17  warning  'cfgs' is not defined                                        no-undef
+   417:24  warning  'cfgs' is not defined                                        no-undef
+   451:17  warning  'cfgs' is not defined                                        no-undef
+   454:24  warning  'cfgs' is not defined                                        no-undef
+   457:24  warning  'cfgs' is not defined                                        no-undef
+   468:10  warning  'updateDerivationStepsList' is defined but never used        no-unused-vars
+   496:10  warning  'drawParseTree' is defined but never used                    no-unused-vars
+   496:24  warning  'parseTree' is defined but never used                        no-unused-vars
+   504:17  warning  'cfgs' is not defined                                        no-undef
+   506:17  warning  'cfgs' is not defined                                        no-undef
+   510:24  warning  'cfgs' is not defined                                        no-undef
+   531:17  warning  'cfgs' is not defined                                        no-undef
+   534:17  warning  'cfgs' is not defined                                        no-undef
+   537:24  warning  'cfgs' is not defined                                        no-undef
+   540:24  warning  'cfgs' is not defined                                        no-undef
+   557:24  warning  'cfgs' is not defined                                        no-undef
+   709:17  warning  'cfgs' is not defined                                        no-undef
+   793:24  warning  'cfgs' is not defined                                        no-undef
+   820:11  warning  'otherXLeft' is assigned a value but never used              no-unused-vars
+   823:11  warning  'nestedElseX' is assigned a value but never used             no-unused-vars
+   824:11  warning  'nestedRightSX' is assigned a value but never used           no-unused-vars
+  1015:10  warning  'showAmbiguityComparison' is defined but never used          no-unused-vars
+  1021:17  warning  'cfgs' is not defined                                        no-undef
+  1107:5   warning  'swal' is not defined                                        no-undef
+  1198:9   warning  'swal' is not defined                                        no-undef
+  1225:10  warning  'showCompletionAlert' is defined but never used              no-unused-vars
+  1226:5   warning  'swal' is not defined                                        no-undef
+  1240:5   warning  'swal' is not defined                                        no-undef
+  1250:17  warning  'cfgs' is not defined                                        no-undef
+  1283:17  warning  'cfgs' is not defined                                        no-undef
+  1365:17  warning  'cfgs' is not defined                                        no-undef
+  1404:17  warning  'cfgs' is not defined                                        no-undef
+  1427:38  warning  'index' is defined but never used                            no-unused-vars
+
+/home/runner/work/exp-demonstration-of-ambiguity-iiith/exp-demonstration-of-ambiguity-iiith/experiment/simulation/mobile-detection.js
+  393:7   warning  'mobileDetection' is assigned a value but never used  no-unused-vars
+  396:38  warning  'module' is not defined                               no-undef
+  397:3   warning  'module' is not defined                               no-undef
+
+✖ 113 problems (1 error, 112 warnings)
+
